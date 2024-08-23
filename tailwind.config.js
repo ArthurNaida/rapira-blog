@@ -4,8 +4,11 @@ export default {
   darkMode: false,
   theme: {
     extend: {
+      fontSize: {
+        '1.5xl': ['1.375rem', '1.875rem']
+      },
       borderRadius: {
-        '2.5xl': '20px'    
+        '2.5xl': '1.25rem'    
       },
       colors: {
         'primary': '#3E97FF',
