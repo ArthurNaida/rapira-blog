@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const model = defineModel();
+</script>
+
 <template>
 <div class="relative" data-hs-combo-box='{
       "groupingType": "tabs",
@@ -15,7 +19,8 @@
             <path d="m21 21-4.3-4.3"></path>
             </svg>
         </div>
-        <input class="bg-gray-100 py-3 ps-10 pe-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" type="text" role="combobox" aria-expanded="false" placeholder="Поиск" value="" data-hs-combo-box-input="">
+        <input v-model="model"
+        class="bg-gray-100 py-3 ps-10 pe-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" type="text" role="combobox" aria-expanded="false" placeholder="Поиск" value="" data-hs-combo-box-input="">
     </div>
 </div>
 </template>

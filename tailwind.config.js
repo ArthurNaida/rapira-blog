@@ -1,6 +1,18 @@
+// import test from 'node:test';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  rules: [
+    {
+      test: /\.sass$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader'
+      ]
+    }
+  ],
   darkMode: false,
   theme: {
     extend: {

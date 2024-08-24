@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import RHeader from './components/ui/RHeader.vue'
 </script>
 
@@ -8,14 +8,5 @@ import RHeader from './components/ui/RHeader.vue'
     {path: '/', title: 'Главная'},
     {path: '/blog', title: 'Блог'}
   ]"/>
-
   <RouterView />
 </template>
-
-<style scoped>
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-</style>

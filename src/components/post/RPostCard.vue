@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import RTagItem from '../ui/RTagItem.vue';
-import Post from '../../types/post';
+import type Post from '../../types/post';
 import { computed } from 'vue';
 
-const props = defineProps<Post>();
+const props = withDefaults(defineProps<Post>(), {
+    comments: () => []
+});
 const commentLabel = computed(() => {
     if (props.comments?.length % 10 === 1 && props.comments?.length % 100 !== 11) {
         return 'комментарий';
@@ -47,27 +49,4 @@ const commentLabel = computed(() => {
     </div>
 </div>
 </template>
-/* • */
-width: 6px;
-height: 12px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 10px;
-line-height: 10px;
-/* or 100% */
-display: flex;
-align-items: center;
-letter-spacing: -0.03em;
-
-/* Gray/Gray-600 */
-color: #7E8299;
-
-
-/* Inside auto layout */
-flex: none;
-order: 3;
-flex-grow: 0;
-
 
