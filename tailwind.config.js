@@ -16,6 +16,10 @@ export default {
   darkMode: false,
   theme: {
     extend: {
+      boxShadow: {
+        'input-primary': '0px 0px 0px 2px rgba(62, 151, 255, 0.32)',
+        'input-danger': '0px 0px 0px 2px #F1416C52'
+      },
       fontSize: {
         '22': ['1.375rem', '1.375rem'],
         '24': ['1.5rem', '1.5rem']
@@ -27,7 +31,8 @@ export default {
         'primary': '#3E97FF',
         'primary-active': '#2884EF',
         'gray-600': '#7E8299',
-        'secondary': '#EEF6FF'
+        'secondary': '#EEF6FF',
+        'danger': '#F1416C'
       }
     }
   },

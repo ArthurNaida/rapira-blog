@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import RTagItem from '../ui/RTagItem.vue';
 import type Post from '../../types/post';
 import RInfoBar from '../ui/RInfoBar.vue';
 import RTagItemsList from '../RTagItemsList.vue';
@@ -20,9 +19,6 @@ if (post.comments === undefined) {
     <RInfoBar :comments-length="post.comments?.length"/>
     <h2 class="font-semibold text-22">{{ post.title }}</h2>
     <span class="font-medium text-base">{{ post.description }}</span>
-    <!-- <div class="flex flex-wrap gap-2.5">
-        <RTagItem v-for="(tagTitle, index) in post.tags" :key="index" :title="tagTitle"/>
-    </div> -->
     <RTagItemsList :tags="post.tags"/>
 </div>
 </template>
