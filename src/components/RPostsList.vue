@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import RPostCard from './post/RPostCard.vue';
-import Post from '../../types/post';
+import type Post from '../../types/post';
 const props = defineProps<{
     cards: Post[]
 }>();
