@@ -17,7 +17,8 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        '1.5xl': ['1.375rem', '1.875rem']
+        '22': ['1.375rem', '1.375rem'],
+        '24': ['1.5rem', '1.5rem']
       },
       borderRadius: {
         '2.5xl': '1.25rem'    

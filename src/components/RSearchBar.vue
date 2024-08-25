@@ -1,28 +1,20 @@
 <script setup lang="ts">
 import RSearchBox from './ui/RSearchBox.vue';
 import RDropdownButton from './ui/RDropdownButton.vue';
-import RTagsList from './RTagsList.vue';
+import RTagButtonsList from './RTagButtonsList.vue';
 import { computed, ref } from 'vue';
 import { usePostsStore } from '@/posts-store';
 import type Post from '@/types/post';
-import type Tag from '@/types/tag';
-import { useTagsStore } from '@/tags-store';
+// import type Tag from '@/types/tag';
+// import { useTagsStore } from '@/tags-store';
 
 const showTags = ref<boolean>(true);
 const inputText = ref<string>('');
 const { posts } = usePostsStore();
-const { tags } = useTagsStore();
 
 defineEmits<{
   onInput: [value: Post[]]
 }>();
-
-const filteredPostsByTags: Array<Post> = computed(() => {
-  Array.prototype.includesAll = function<T>(arr: Array<T>) {return arr.every((e: T) => (this.includes(e)))};
-  const checkedTags = tags.filter((tag: Tag) => (tag.checked)).map((tag: Tag) => (tag.title))
-  console.log(checkedTags, posts[0].tags, posts[0].tags.includes(checkedTags[0]))
-  return posts.filter((post: Post) => (post.tags.includesAll(checkedTags)))
-})
 
 const filteredPostsByText: Array<Post> = computed(() => {
   Array.prototype.includesAll = function<T>(arr: Array<T>) {return arr.every((e: T) => (this.includes(e)))};
@@ -35,10 +27,6 @@ const filteredPostsByText: Array<Post> = computed(() => {
     return posts.filter((post: Post) => (targetWords(post).includesAll<string>(inputWords)));
   }
 })
-
-const filteredPosts = computed(() => {
-  return filteredPostsByTags.filter((post: Post) => (filteredPostsByText.includes(post)))
-})
 </script>
 
 <template>
@@ -50,7 +38,7 @@ const filteredPosts = computed(() => {
     </div>
     <RDropdownButton @on-open="(e) => showTags = e" :label-open="'Фильтр'" :label-hidden="'Скрыть фильтр'"/>
   </div>
-  <RTagsList class="py-5 mx-5" v-if="showTags"/>
+  <RTagButtonsList class="py-5 mx-5" v-if="showTags"/>
 </div>
 </template>
 

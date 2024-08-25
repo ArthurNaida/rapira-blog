@@ -19,35 +19,35 @@ export const usePostsStore = defineStore('posts', () => {
             tags: ['Природа', 'Животные']
         },
         {
-            imgsrc: '/src/assets/pics/3.png',
+            imgsrc: '/src/assets/pics/3.jpg',
             title: 'Цвета природы в наших руках',
             description: 'Наши художники выражают всю красоту окружающего мира через творчество.',
             comments: ['sababa', 'kuleku'],
             tags: ['Природа', 'Искусство']
         },
         {
-            imgsrc: '/src/assets/pics/4.png',
+            imgsrc: '/src/assets/pics/4.jpg',
             title: 'Семейные узы в дикой природе',
             description: 'Наблюдая за этими сценами, наши фотографы чувствуют тепло и единство.',
             comments: ['sababa', 'kuleku'],
             tags: ['Природа', 'Животные']
         },
         {
-            imgsrc: '/src/assets/pics/5.png',
+            imgsrc: '/src/assets/pics/5.jpg',
             title: 'Гармония городских и природных пейзажей ',
             description: 'Этот вид напоминает нам о том, как природа и город могут сосуществовать в гармонии.',
             comments: ['sababa', 'kuleku'],
             tags: ['Природа', 'Искусство']
         },
         {
-            imgsrc: '/src/assets/pics/6.png',
+            imgsrc: '/src/assets/pics/6.jpg',
             title: 'Моменты, которые остаются в сердце ',
             description: 'Эти мгновения наполняют наши сердца радостью и любовью.',
             comments: ['sababa', 'kuleku'],
             tags: ['Природа', 'Люди', 'Животные']
         },
         {
-            imgsrc: '/src/assets/pics/6.png',
+            imgsrc: '/src/assets/pics/6.jpg',
             title: 'Моменты, которые остаются в сердце ',
             description: 'Эти мгновения наполняют наши сердца радостью и любовью.',
             comments: ['sababa', 'kuleku'],
