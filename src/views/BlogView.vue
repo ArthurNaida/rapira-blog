@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import RPostCard from '@/components/post/RPostCard.vue';
 import RPostsList from '@/components/RPostsList.vue';
 import RPostModal from '@/components/post/RPostModal.vue';
 import RSearchBar from '@/components/RSearchBar.vue';
@@ -7,7 +6,7 @@ import { usePostsStore } from '@/posts-store';
 import { useTagsStore } from '@/tags-store';
 import type Post from '@/types/post';
 import type Tag from '@/types/tag';
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 const {posts} = usePostsStore();
 const {tags} = useTagsStore();
@@ -15,6 +14,17 @@ const {tags} = useTagsStore();
 const targetPost = ref<Post | null>(null);
 const showModal = ref<boolean>(false);
 const toggleModal = () => (showModal.value = !showModal.value)
+watch(showModal, () => {
+    if (showModal.value) {
+        document.body.classList.add("overflow-y-hidden");
+        console.log(document.body.classList, showModal)
+    } else {
+
+        console.log(showModal)
+        document.body.classList.remove("overflow-y-hidden");
+        console.log(document.body.classList)
+    }
+})
 
 const filteredPostsByText = ref<Post[]>(posts);
 const filteredPostsByTags = computed(() => {
@@ -31,8 +41,8 @@ const filteredPosts = computed(() => {
 </script>
 
 <template>
-<div class="h-max relative">
-    <div class="bg-white">
+<div class="h-max">
+    <div class="bg-white"> 
         <RSearchBar @on-input="(e) => filteredPostsByText = e"/>
     </div>
     <div v-if="filteredPosts.length" class="bg-white my-5 mx-auto p-7 rounded-xl w-fit">
@@ -40,12 +50,14 @@ const filteredPosts = computed(() => {
         :cards="filteredPosts"
         @show-modal="(post) => (targetPost = post, toggleModal())"/>
     </div>
-    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-30"
-    v-if="showModal"
-    @click="toggleModal"></div>
-    <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    <div class="overflow-y-auto overflow-x-hidden fixed top-[var(--header-height)] right-0 left-0 justify-center items-center w-full h-[calc(100vh-var(--header-height))] max-h-full bg-black bg-opacity-30"
     v-if="showModal">
-        <RPostModal :post="targetPost"/>
+        <div class="relative flex justify-center min-h-full h-fit my-10 -z-20">
+            <div class="fixed top-[var(--header-height)] h-full w-full bg-black bg-opacity-30 -z-10"
+            @click="toggleModal"></div>
+            <RPostModal :post="targetPost"
+            @close-modal="showModal = false"/>
+        </div>
     </div>
 </div>
 </template>

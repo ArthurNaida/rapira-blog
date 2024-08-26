@@ -1,7 +1,7 @@
 <template>
-    <header class="bg-black h-16">
+    <header class="sticky top-0 z-30 bg-black h-[--header-height]">
         <img class="pl-14" src="../../assets/logo.svg" alt="">
-        <nav class=" ml-20">
+        <nav class="ml-20">
             <ul class="flex gap-7">
                 <li v-for="(page, index) in pages" :key="index">
                     <router-link 

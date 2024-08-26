@@ -22,7 +22,8 @@ export default {
       },
       fontSize: {
         '22': ['1.375rem', '1.375rem'],
-        '24': ['1.5rem', '1.5rem']
+        '24': ['1.5rem', '1.5rem'],
+        '14': ['0.875rem', '0.875rem']
       },
       borderRadius: {
         '2.5xl': '1.25rem'    
