@@ -34,6 +34,7 @@ const toggleSidebar = () => (showSidebar.value = !showSidebar.value)
                     class="text-gray-100 font-semibold inline-block border-0 w-full text-start rounded py-4 px-4" 
                     active-class="!text-blue-500 bg-white bg-opacity-10"
                     :to="page.path"
+                    @click="toggleSidebar"
                     >{{ page.title }}</router-link>
                 </li>
             </ul>

@@ -26,7 +26,7 @@ const filteredPostsByText: Array<Post> = computed(() => {
   } else {
     return posts.filter((post: Post) => (targetWords(post).includesAll<string>(inputWords)));
   }
-})
+})  
 </script>
 
 <template>

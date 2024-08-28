@@ -3,6 +3,7 @@ import RPostsList from '@/components/RPostsList.vue';
 import RPostModal from '@/components/post/RPostModal.vue';
 import RSearchBar from '@/components/RSearchBar.vue';
 import RModalWrapper from '@/components/ui/RModalWrapper.vue';
+import RStub from '@/components/ui/RStub.vue'
 import { usePostsStore } from '@/posts-store';
 import { useTagsStore } from '@/tags-store';
 import type Post from '@/types/post';
@@ -51,20 +52,17 @@ const filteredPosts = computed(() => {
         :cards="filteredPosts"
         @show-modal="(post) => (targetPost = post, toggleModal())"/>
     </div>
-    <!-- <div class="overflow-y-auto overflow-x-hidden fixed top-[var(--header-height-desktop)] right-0 left-0 justify-center items-center w-full h-[calc(100vh-var(--header-height))] max-h-full bg-black bg-opacity-30"
-    v-if="showModal">
-        <div class="relative flex justify-center min-h-full h-fit my-10 -z-20">
-            <div class="fixed top-[var(--header-height-desktop)] h-full w-full bg-black bg-opacity-30 -z-10"
-            @click="toggleModal"></div>
-            <RPostModal :post="targetPost"
-            @close-modal="showModal = false"/>
-        </div>
-    </div> -->
+    <RStub class="mx-auto my-[65px] w-[327px]"
+    :type="'search'"
+    :title="'Поиск не дал результатов'"
+    :description="'Повторите поиск или используйте фильтр для структуризации контента'"
+    v-else/>
     <RModalWrapper 
     v-if="showModal"
     :top-offset="'var(--header-height-desktop)'"
     @touchMask="toggleModal">
-        <RPostModal :post="targetPost"
+        <RPostModal class="mb-20" 
+        :post="targetPost"
         @close-modal="showModal = false"/>
     </RModalWrapper>
 </div>

@@ -11,7 +11,8 @@ const {topOffset} = withDefaults(defineProps<{
 <template>
     <div :class="`overflow-y-auto overflow-x-hidden fixed top-[${topOffset}] right-0 left-0 justify-center items-center w-full h-[calc(100vh-${topOffset})] max-h-full bg-black bg-opacity-30`">
         <div class="relative flex justify-center min-h-full h-fit my-10 -z-20">
-            <RLayoutMask :class="`top-[${topOffset}]`"
+            <RLayoutMask 
+            :class="`top-[${topOffset}]`"
             :top-offset="topOffset"
             @click="$emit('touchMask')"/>
             <slot></slot>

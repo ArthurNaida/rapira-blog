@@ -2,7 +2,6 @@
 import type Post from '../../types/post';
 import RInfoBar from '../ui/RInfoBar.vue';
 import RTagItemsList from '../RTagItemsList.vue';
-import { bindSrc } from '@/hooks';
 
 const {post} = defineProps<{
     post: Post
