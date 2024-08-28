@@ -10,5 +10,9 @@ https://arthurnaida.github.io/rapira-blog/ -proto of blog
 - views (blog & stub)
 
 - logic & wrappers
+# stores
+## posts
+- implement posts data to ```posts-store.ts``` and call it from ```PostsList.vue```.
+- all data of post automatically implements in ```PostCard``` and ```PostModal```
+- change and set ui by tailwind in ```PostCard``` and ```PostModal```
 
-```
