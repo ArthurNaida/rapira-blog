@@ -11,7 +11,7 @@ defineEmits<{
 </script>
 
 <template>
-<div class="grid grid-cols-3 gap-5 gap-y-10">
+<div class="grid xl:grid-cols-3 md:grid-cols-2 gap-5 gap-y-10">
     <div class=""
     v-for="(cardContent, index) in cards" :key="index">
         <RPostCard

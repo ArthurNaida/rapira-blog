@@ -16,6 +16,11 @@ export default {
   darkMode: false,
   theme: {
     extend: {
+      screens: {
+        'max': '1366px',
+        'tablet': '820px',
+        'phone': '375px'
+      },
       boxShadow: {
         'input-primary': '0px 0px 0px 2px rgba(62, 151, 255, 0.32)',
         'input-danger': '0px 0px 0px 2px #F1416C52'

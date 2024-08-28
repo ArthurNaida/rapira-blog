@@ -1,5 +1,5 @@
 export default interface Post {
-    imgsrc: string,
+    imgsrc: URL,
     comments?: string[],
     title: string,
     description?: string,

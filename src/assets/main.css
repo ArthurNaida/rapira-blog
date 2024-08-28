@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --header-height: 62px;
+  --header-height-desktop: 62px;
+  --header-height-tablet: 78px;
 }
 * {
   font-family: 'Inter';

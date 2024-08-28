@@ -67,7 +67,7 @@ const overflowComment = computed(() => (model?.value.length > maxCommentLength))
     <div class="mt-3">
         <div class="flex pb-3 pl-3 gap-3"
         v-for="(comment, index) in comments" :key="index">
-            <img src="../assets/pics/face.png" width="38" height="38"
+            <img src="/src/assets/pics/face.png" width="38" height="38"
             class="[clip-path:circle(50%)] bg-gray-200 h-fit">
             <div class="flex flex-col gap-1.5">
                 <span class="text-gray-900 leading-4 font-semibold">Мира Гусева</span>

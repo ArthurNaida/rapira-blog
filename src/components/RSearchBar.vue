@@ -30,13 +30,20 @@ const filteredPostsByText: Array<Post> = computed(() => {
 </script>
 
 <template>
-<div class="container mx-auto">
-  <div class="h-20 flex justify-between mx-5">
+<div class="phone:container phone:mx-auto mx-2.5">
+  <div class="sm:h-20 h-fit py-3 sm:py-0 flex justify-between sm:mx-5">
     <div class="flex items-center gap-10">
-        <h1 class="font-bold text-gray-900 text-3xl">Блог</h1>
-        <RSearchBox @input="$emit('onInput', filteredPostsByText)" v-model="inputText"/>
+        <h1 class="font-bold text-gray-900 sm:text-3xl text-2xl">Блог</h1>
+        <RSearchBox class="sm:block hidden w-96"
+        @input="$emit('onInput', filteredPostsByText)" 
+        v-model="inputText"/>
     </div>
     <RDropdownButton @on-open="(e) => showTags = e" :label-open="'Фильтр'" :label-hidden="'Скрыть фильтр'"/>
+  </div>
+  <div class="flex justify-center sm:hidden pb-3 sm:pb-0">
+    <RSearchBox class="w-[375px]"
+    @input="$emit('onInput', filteredPostsByText)" 
+    v-model="inputText"/>
   </div>
   <RTagButtonsList class="py-5 mx-5" v-if="showTags"/>
 </div>

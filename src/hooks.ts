@@ -14,3 +14,7 @@ export const useCommentLabel = (commentsLength: number) => computed(() => {
 export function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+// export function bindSrc(path: string) {
+//     return  process.env.NODE_ENV === "development" ? `/src${path}` : `/src${path}` 
+// }

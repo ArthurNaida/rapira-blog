@@ -3,6 +3,7 @@ import RInfoBar from '../ui/RInfoBar.vue';
 import RTagItemsList from '../RTagItemsList.vue';
 import RCommentBlock from '../RCommentBlock.vue';
 import RCloseButton from '../ui/RCloseButton.vue';
+import { bindSrc } from '@/hooks';
 import type Post from '@/types/post';
 
 const {post} = defineProps<{
@@ -18,7 +19,7 @@ const {post} = defineProps<{
         <h2 class="font-semibold text-24">{{ post.title }}</h2>
         <RInfoBar :comments-length="post.comments?.length"/>
     </div>
-    <img :src="post.imgsrc" width="600" height="373"
+    <img :src="post.imgsrc.toString()" width="600" height="373"
     class="rounded-xl object-cover w-[600px] h-[373px]">
     <span class="font-medium text-base">{{ post.description }}</span>
     <RTagItemsList :tags="post.tags"/>
